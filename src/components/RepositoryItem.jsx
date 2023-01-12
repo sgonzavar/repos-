@@ -1,22 +1,13 @@
-import { View, StyleSheet, Image } from "react-native"
-import StyledText from "./StyledText"
+import { View, StyleSheet } from "react-native"
 import RepositoryStatus from "./RepositoryStatus"
+import RepositoryItemHeader from "./RepositoryItemHeader"
 import theme from "../theme"
 
 const RepositoryItem = (props) => {
   return (
     <View
       key={props.id} style={styles.container}>
-      <Image style={styles.image} source={{ uri: props.ownerAvatarUrl}} />
-      <StyledText 
-        fontWeight='bold' 
-        fontSize='subheading'
-      >
-        {props.id}
-      </StyledText>
-      <StyledText >name: {props.fullName}</StyledText>
-      <StyledText >description: {props.description}</StyledText>
-      <StyledText style={styles.language} >{props.language}</StyledText>
+      <RepositoryItemHeader {...props} />
       <RepositoryStatus {...props} />
     </View>
   )
@@ -24,7 +15,7 @@ const RepositoryItem = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    padding: 9,
     paddingBottom: 5,
     paddingTop: 5
   },
@@ -35,12 +26,7 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
     borderRadius: 6,
     overflow: 'hidden',
-  },
-  image: {
-    borderRadius: 8,
-    height: 48,
-    width: 48,
-  } 
+  }
 })
 
 export default RepositoryItem

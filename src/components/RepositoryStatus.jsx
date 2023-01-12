@@ -9,7 +9,7 @@ const parseThousands = value => {
 
 const RepositoryStatus = ({ forksCount, stargazersCount, ratingAverage, reviewCount }) => {
   return (
-    <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 25, }}>
+    <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 5, }}>
       <View>
         <StyledText align='center' >{parseThousands(forksCount)}</StyledText>
         <StyledText align='center' fontWeight='bold' >fork</StyledText>
